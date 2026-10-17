@@ -8,22 +8,23 @@ plugins {
     signing
 }
 
-group = project.findProperty("group")?.toString() ?: project.findProperty("LIB_GROUP")?.toString() ?: "com.github.connecttag"
-version = project.findProperty("version")?.toString() ?: project.findProperty("LIB_VERSION")?.toString() ?: "1.0.0"
+group = "com.github.connecttag"
+version = "1.0.5"
 
 kotlin {
+    jvmToolchain(21)
     android {
         namespace = "org.connecttag.lib.country"
         compileSdk = 37
         minSdk = 24
         compilerOptions {
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
         }
     }
 
     jvm {
         compilerOptions {
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
         }
     }
 
